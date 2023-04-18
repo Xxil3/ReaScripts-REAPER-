@@ -9,11 +9,16 @@
  * Extensions: SWS
  * Version: 1.0
 --]]
+-- USER CONFIG AREA ----------------------------------------------------
+
+Undo_Title = "Batch Create Regions From Selected Tracks With Tail"
+
+------------------------------------------------------------------------
 
 --[[CHANGE LOG]]--
 --[[
- * v 1.0
- * First Submit
+ * v 1.01
+ * Syntax cleanup
  * Known Issues: 
  * All Tracks must be populated with items in order to not break reaper.GetMediaItemInfo_Value()
  * Can not handle variation groups with different numbers of layers or in different track folders at the same time.
@@ -103,6 +108,6 @@ Main() -- Execute your main function
 
 reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.
 
-reaper.Undo_EndBlock("Batch Create Regions From Selected Tracks", -1)
+reaper.Undo_EndBlock(Undo_Title, -1)
 
 reaper.UpdateArrange() -- Update the arrangement (often needed)
